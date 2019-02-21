@@ -1,0 +1,57 @@
+﻿<div id="TagList">
+    @{
+        int i = 1; string color = "";
+        var tagsList = (IPagedList<Tag>)ViewBag.TagsList;
+    }
+    @foreach (var item in tagsList)
+    {
+        if (i % 4 == 1)
+        {
+            color = "success";
+        }
+        else if (i % 4 == 2)
+        {
+            color = "danger";
+        }
+        else if (i % 4 == 3)
+        {
+            color = "warning";
+        }
+        else
+        {
+            color = "info";
+        }
+
+        i++;
+        <div class="row col-xs-6" style="padding-right:20px;">
+            <div class="alert alert-@color alert-dismissable">
+                @Ajax.ActionLink("DeleteTag", "DeleteTag", "Home", new { id = item.Id, searchStr = ViewBag.SearchStr }, new AjaxOptions { AllowCache = false, Confirm = "确定要删除该标签么?", HttpMethod = "Post", LoadingElementDuration = 500, LoadingElementId = "HandleDiv", OnFailure = "Cooperation", OnSuccess = "DeleteTagSuccess", UpdateTargetId = "TagList" }, new { @class = "pull-right deleteTag" })
+                <a class="alert-link" target="_blank" onclick="AddClick(@item.Id)" href="@item.Url">@item.Name</a>
+            </div>
+        </div>
+    }
+
+    @if (tagsList.Count() == 0)
+    {
+        <p style="color:red;text-align:center;">暂无标签信息</p>
+    }
+    else
+    {
+        <div class="row col-xs-12" style="padding-right:20px;">
+            @if (string.IsNullOrWhiteSpace(ViewBag.SearchStr))
+            {
+                @Html.PagedListPager(tagsList, page => Url.Action("Tags", new { page }), PagedListRenderOptions.OnlyShowFivePagesAtATime)
+            }
+            else
+            {
+                @Html.PagedListPager(tagsList, page => Url.Action("Tags", new { page, searchStr = ViewBag.SearchStr }), PagedListRenderOptions.OnlyShowFivePagesAtATime)
+            }
+        </div>
+    }
+
+    <script>
+        $(function () {
+            $(".deleteTag").html("<i class=\"fa fa-trash-o\"></i>");
+        })
+    </script>
+</div>

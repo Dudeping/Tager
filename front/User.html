@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>标签管理器--健忘者的福音</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="row" style="margin: 25px 25px 0 25px;">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5><a href="Index.html">标签管理器</a></h5>
+
+                <div class="ibox-tools" style="float: right; margin-right: 20px;">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="Login.html"><i class="fa fa-sign-in"></i> 登录</a>
+                        </li>
+                        <li><a href="Register.html"><i class="fa fa-sign-out"></i> 注册</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="row">
+                       <div class="col-xs-10">
+                           <form role="form">
+                               <div class="input-group">
+                                   <input type="text" placeholder="请输入标签名进行搜索..." class="form-control">
+                                   <div class="input-group-btn">
+                                       <button class="btn btn-info" type="submit"><span class="fa fa-search"></span></button>
+                                       <button class="btn btn-danger" type="button"><span class="fa fa-times"></span></button>
+                                   </div>
+                               </div>
+                           </form>
+                       </div>
+                        <div class="col-xs-2">
+                            <button type="button" class="btn btn-outline btn-info" data-toggle="modal" data-target="#myModal1">添加标签</button>
+                            <div class="modal inmodal fade" id="myModal1" tabindex="-1" role="dialog"  aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                            <h4 class="modal-title">添加标签</h4>
+                                        </div>
+                                        <form role="form">
+                                            <div class="modal-body">
+                                                <div class="form-group"><label>名称</label> <input type="email" placeholder="标签名" class="form-control" name="Email" required=""></div>
+                                                <div class="form-group"><label>链接</label> <input type="url" placeholder="链接" class="form-control" name="URL" required=""></div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-outline btn-info">创建</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="alert alert-success alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <a class="alert-link" target="_blank" href="https://www.baidu.com">百度一下</a>.
+                    </div>
+                    <div class="alert alert-info alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <a class="alert-link" target="_blank" href="https://www.baidu.com">百度一下</a>.
+                    </div>
+                    <div class="alert alert-warning alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <a class="alert-link" target="_blank" href="https://www.baidu.com">百度一下</a>.
+                    </div>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <a class="alert-link" target="_blank" href="https://www.baidu.com">百度一下</a>.
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-footer">
+                <div style="text-align: center; margin: 10px;">
+                    <strong>Copyright</strong> (C)2016-2017
+                    <a href="http://www.ydath.cn/" target="_blank">DepingDu</a>.
+                    <br />
+                    <a href="http://www.miitbeian.gov.cn/" target="_blank">蜀ICP备16013628号</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Mainly scripts -->
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Nestable List -->
+<script src="js/plugins/nestable/jquery.nestable.js"></script>
+
+
+<!-- Custom and plugin javascript -->
+<script src="js/plugins/pace/pace.min.js"></script>
+
+</body>
+
+</html>

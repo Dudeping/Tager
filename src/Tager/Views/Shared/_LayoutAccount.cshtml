@@ -1,0 +1,35 @@
+﻿
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title--标签管理器</title>
+
+    @Styles.Render("~/Tags/CSS")
+
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            @RenderBody()
+            <p class="m-t">
+                <small>
+                    Base on ASP.NET MVC + Entity Framework <br>
+                    Copyright (C) 2017 - @DateTime.Now.Year <a target="_blank" href="http://www.ydath.cn">DepingDu.</a>
+                </small>
+            </p>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    @Scripts.Render("~/Tags/Js")
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+﻿@model Tag
+
+<div class="panel-body">
+    @Html.Partial("_PartialTags")
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script>
+        function AddClick(id) {
+            $.post("/Home/AddClick/" + id);
+        }
+
+        function Cooperation() {
+            alert("操作失败!请重试.");
+        }
+
+        function DeleteTagSuccess() {
+            alert("删除成功!");
+        }
+    </script>
+}
